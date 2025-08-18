@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de App</title>
+    <title>{{ data.titulo }}</title>
 </head>
 <body>
-    <h1>Pagina HTML</h1>
+    <h1>{{ data.saludo }}</h1>
+    {% if data.cursos_cant > 0 %}
+    <ul>
+        {% for curso in data.cursos %}
+        <li>{{ curso }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>No hay cursos...</h2>
+    {% endif %}
+    <form action="/" method="POST">
+        <h3>Formulario</h3>
+        <p>{{ data.usuario_dinero }}</p>
+        <input type="number" name="ingresar" placeholder="Ingresar">
+        <input type="number" name="retirar" placeholder="Retirar">
+        <button type="submit">Continuar</button>
+    </form>
 </body>
 </html>
