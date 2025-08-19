@@ -1,0 +1,86 @@
+:root {
+    --principal:#02111B;
+    --secundario: #818F96;
+    --terciario: #6E6E6E;
+    --cuarto: #30292F;
+    --fuentes: #FFF;
+    --fontSize1: 38px;
+    --border: 60px;
+}
+
+*{
+  box-sizing: border-box;
+  color: var(--fuentes);
+}
+
+form{
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form > input{
+    color: black;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--principal);
+    display: grid;
+    place-items: center;
+}
+
+body main{
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr;
+    gap: 5%;
+}
+
+body main > div{
+    height: 100%;
+    width: 100%;
+    border-radius: var(--border);
+    padding: 5%;
+}
+
+body main > form.invisible{
+    display:none
+}
+
+body main .userInfo{
+    background-color: var(--terciario);
+}
+body main .userMonto{
+    background-color: var(--cuarto);
+    display: grid;
+    place-items: center;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+body main .userAcciones{
+    background-color: var(--cuarto);
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+    gap: 5%;
+}
+body main .userAcciones > button{
+    background-color: var(--terciario);
+    border-radius: var(--border);
+    border: none;
+    max-height: 80%;
+    transition: all .5s ease;
+}
+body main .userAcciones > button:hover{
+    filter: brightness(0.5);
+}
+/* ----------------------------------------------------------------------------------------- */
+
+body main .userHistorial{
+    background-color: var(--secundario);
+}

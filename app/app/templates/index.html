@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ data.titulo }}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
 </head>
 <body>
-    <h1>{{ data.saludo }}</h1>
-    {% if data.cursos_cant > 0 %}
-    <ul>
-        {% for curso in data.cursos %}
-        <li>{{ curso }}</li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <h2>No hay cursos...</h2>
-    {% endif %}
-    <form action="/" method="POST">
-        <h3>Formulario</h3>
-        <p>{{ data.usuario_dinero }}</p>
-        <input type="number" name="ingresar" placeholder="Ingresar">
-        <input type="number" name="retirar" placeholder="Retirar">
-        <button type="submit">Continuar</button>
-    </form>
+    <main>
+        <div class="userInfo"></div>
+        <div class="userMonto">
+            <h1>MONTO DISPONIBLE: ${{ data.usuario_dinero }}</h1>
+        </div>
+
+        <div class="userAcciones">
+            <button class="btn-transferir" id="btn-transferir">TRANSFERIR</button>
+            <button class="btn-ingresar" id="btn-ingresar">INGRESAR</button>
+            <h1>BALANCE</h1>
+            <button>LOGOUT</button>
+        </div>
+
+        <div class="userHistorial">
+        </div>
+        <form action="" method="post" id="form-transferir" class="invisible">
+                <h2>TITULO</h2>
+                <input type="search" name="userSearch" id="">
+                <input type="number" name="userTransferencia" id="">
+                <button class="confirmar">></button>
+            </form>
+    </main>
 </body>
 </html>
