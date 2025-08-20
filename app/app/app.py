@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import sqlite3
+from Transaccion import *
 
 app = Flask(__name__)
 
@@ -25,6 +27,9 @@ def index():
     }
 
     return render_template('index.html', data=data)
+
+paquete1 = Transaccion(1000)
+paquete1.getMonto()
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
