@@ -7,7 +7,7 @@ def index():
 
     usuario_dinero = 1000
     if request.method == 'POST':
-        monto_ingresado = request.form.get('ingresar',type=int)
+        monto_ingresado = request.form.get('userIngresar',type=int)
         if monto_ingresado:
             usuario_dinero += monto_ingresado
         else:

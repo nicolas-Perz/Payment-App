@@ -1,6 +1,6 @@
-let btn_transferir = document.getElementById('btn-transferir');
-let form_transferir = document.getElementById('form-transferir');
+let btn_ingresar = document.getElementById('btn-ingresar');
+let form_ingresar = document.getElementById('form-ingresar');
 
-btn_transferir.addEventListener('click', ()=>{
-    form_transferir.classList.toggle('invisible');
+btn_ingresar.addEventListener('click', ()=>{
+    form_ingresar.classList.toggle('invisible');
 })
