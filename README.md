@@ -5,7 +5,7 @@ Tecnologías:
 Python (código general)
 Flask (biblioteca de Python para interactuar con una página web y una database)
 SQL (motor de la base de datos)
-SQLite (libreria ligera incluida en Python para hacer de puente entre este mismo y SQL)
+MySQL
 
 Acciones:
 Crear un usuario propio.
