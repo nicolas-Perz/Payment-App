@@ -1,9 +1,31 @@
 from flask import Flask, render_template, request
-import sqlite3
+from flask_mysqldb import MySQL
 from Transaccion import *
 
 app = Flask(__name__)
 
+#Conexion a MySQL
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '12345'
+app.config['MYSQL_DB'] = 'transacciones' #nombre de la base de datos
+
+conexion_db = MySQL(app) #Crear vinculo entre la aplicación y MySQL
+
+@app.route('/transaccion')
+def mostrar_transaccion():
+    data={}
+    
+
+@app.route('/',methods=['GET','POST'])
+def index():
+    data = {}
+    return render_template('index.html',data=data)
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+
+''' -------------------------------------------------------------------------------------------------------
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
@@ -27,9 +49,4 @@ def index():
     }
 
     return render_template('index.html', data=data)
-
-paquete1 = Transaccion(1000)
-paquete1.getMonto()
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+'''
