@@ -9,9 +9,13 @@
 </head>
 <body>
     <main>
-        <div class="userInfo"></div>
+        <div class="userInfo">
+            <H1>{{ data.userNombre}}</H1>
+            <h2>{{ data.userDNI }}</h2>
+            <h3>{{ data.userEmail }}</h3>
+        </div>
         <div class="userMonto">
-            <h1>MONTO DISPONIBLE: ${{ data.usuario_dinero }}</h1>
+            <h1>MONTO DISPONIBLE: ${{ data.userDinero }}</h1>
         </div>
 
         <div class="userAcciones">
@@ -19,16 +23,26 @@
             <button class="btn-ingresar" id="btn-ingresar">INGRESAR</button>
             <h1>BALANCE</h1>
             <button>LOGOUT</button>
+            <button class="btn-login" id="btn-login">LOGIN</button>
         </div>
 
         <div class="userHistorial">
         </div>
+
+        <form action="/login" method="POST" id="form-login" class="invisible">
+            <H2>LOGIN</H2>
+            <input type="text" name="userNombre" id="userNombre" placeholder="Inserte nombre" required>
+            <input type="number" name="userDNI" id="userDNI" placeholder="Inserte DNI" required>
+            <input type="email" name="userEmail" id="userEmail" placeholder="Inserte correo electronico" required>
+            <button type="submit">CONFIRMAR</button>
+        </form>
+
         <form action="/" method="post" id="form-ingresar" class="invisible">
-                <h2>INGRESAR</h2>
-                <input type="search" name="userSearch" id="" placeholder="Buscar usuario">
-                <input type="number" name="userIngresar" id="" placeholder="Ingresar monto">
-                <button type="submit" class="confirmar">></button>
-            </form>
+            <h2>INGRESAR</h2>
+            <input type="search" name="userSearch" id="" placeholder="Buscar usuario">
+            <input type="number" name="userIngresar" id="" placeholder="Ingresar monto">
+            <button type="submit" class="confirmar">CONFIRMAR</button>
+        </form>
     </main>
 </body>
 </html>

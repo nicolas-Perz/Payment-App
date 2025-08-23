@@ -10,20 +10,30 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = '12345'
 app.config['MYSQL_DB'] = 'transacciones' #nombre de la base de datos
 
-conexion_db = MySQL(app) #Crear vinculo entre la aplicación y MySQL
+conexion_db = MySQL(app) #Crear vinculo entre la aplicación y MySQL    
 
-@app.route('/transaccion')
-def mostrar_transaccion():
-    data={}
-    
-
-@app.route('/',methods=['GET','POST'])
+@app.route('/')
 def index():
-    data = {}
+    data = {
+        'userNombre': 'Sin usuario',
+        'userDinero': 0
+    }
     return render_template('index.html',data=data)
+
+@app.route('/login',methods=['POST'])
+def login():
+    if request.method == 'POST':
+        data = {
+            'userNombre': request.form['userNombre'],
+            'userDNI': request.form['userDNI'],
+            'userEmail': request.form['userEmail']
+        }
+    return render_template('index.html',data=data)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
 
 ''' -------------------------------------------------------------------------------------------------------
 @app.route('/', methods=['GET', 'POST'])
