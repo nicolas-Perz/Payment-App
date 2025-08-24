@@ -1,7 +1,8 @@
 {% extends './layout.html' %} <!--se extiende desde layout y recibira sus parametros-->
 <!--Este archivo index recibira todos los bloques y los rellenara de contenido, mientras que layout.html sera como una estanteria vacia, aca estaran todos los libros para llenarla....-->
 
-{% block title %} {{data.titulo}}  {% endblock %}
+{% block title %} {{ datos.titulo }}  {% endblock %}
 {% block body %}
-    <h1> {{data.nombre}} </h1>
+    <h1>Contacto de {{ datos.nombre }}</h1>
+    <h2>Edad: {{ datos.edad }}</h2>
 {% endblock %}
