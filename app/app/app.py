@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = '12345'
-app.config['MYSQL_DB'] = 'transacciones' #nombre de la base de datos
+app.config['MYSQL_DB'] = 'paymentapp' #nombre de la base de datos
 
 conexion_db = MySQL(app) #Crear vinculo entre la aplicación y MySQL    
 
@@ -22,12 +22,20 @@ def index():
 
 @app.route('/login',methods=['POST'])
 def login():
+
+    cursor_db = conexion_db.connection.cursor()
     if request.method == 'POST':
         data = {
             'userNombre': request.form['userNombre'],
             'userDNI': request.form['userDNI'],
             'userEmail': request.form['userEmail']
         }
+    sql = f"INSERT INTO paymentapp.usuarios (nombre,dni,email) VALUES ('{data['userNombre']}','{data['userDNI']}','{data['userEmail']}')"
+    cursor_db.execute(sql)
+    conexion_db.connection.commit()
+    usuarios = cursor_db.fetchall()
+    print(usuarios)
+    print('holis')
     return render_template('index.html',data=data)
 
 
