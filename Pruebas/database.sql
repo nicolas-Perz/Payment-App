@@ -1,5 +1,0 @@
-CREATE TABLE IF NOT EXISTS transacciones (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    descripcion TEXT NOT NULL,
-    monto REAL NOT NULL
-);
