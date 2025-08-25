@@ -38,10 +38,22 @@ def login():
     print('holis')
     return render_template('index.html',data=data)
 
+@app.route('/depositar',methods=['POST'])
+def transferir():
 
-
-
-
+    cursor_db = conexion_db.connection.cursor()
+    if request.method == 'POST':
+        data = {
+            #'userSearch': request.form['userSearch'],
+            'userMonto': request.form['userMonto'],
+        }
+    sql = f"INSERT INTO cuentas (monto) VALUES ('{data['userMonto']}')"
+    cursor_db.execute(sql)
+    conexion_db.connection.commit()
+    cuentas = cursor_db.fetchall()
+    print(cuentas)
+    print('holis')
+    return render_template('index.html',data=data)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

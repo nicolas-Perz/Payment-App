@@ -20,10 +20,10 @@
 
         <div class="userAcciones">
             <button class="btn-transferir" id="btn-transferir">TRANSFERIR</button>
-            <button class="btn-ingresar" id="btn-ingresar">INGRESAR</button>
+            <button class="btn-depositar" id="btn-depositar">DEPOSITAR</button>
             <h1>BALANCE</h1>
-            <button>LOGOUT</button>
-            <button class="btn-login" id="btn-login">LOGIN</button>
+            <button> LOGOUT </button>
+            <button class="btn-login" id="btn-login" >LOGIN</button>
         </div>
 
         <div class="userHistorial">
@@ -37,11 +37,11 @@
             <button type="submit">CONFIRMAR</button>
         </form>
 
-        <form action="/" method="post" id="form-ingresar" class="invisible">
-            <h2>INGRESAR</h2>
-            <input type="search" name="userSearch" id="" placeholder="Buscar usuario">
-            <input type="number" name="userIngresar" id="" placeholder="Ingresar monto">
-            <button type="submit" class="confirmar">CONFIRMAR</button>
+        <form action="/depositar" method="POST" id="form-depositar" class="invisible">
+            <h2>DEPOSITAR</h2>
+            <input type="search" name="userSearch" id="userID" placeholder="Buscar usuario">
+            <input type="number" name="userMonto" id="userMonto" placeholder="Depositar monto" requeried>
+            <button type="submit" class="confirmar" onclick="history.back()">CONFIRMAR</button>
         </form>
     </main>
 </body>

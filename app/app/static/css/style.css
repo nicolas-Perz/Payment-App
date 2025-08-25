@@ -16,7 +16,7 @@
 form{
     height: 40%;
     width: 20%;
-    background-color: black;
+    background-color: rgb(208, 199, 199);
     display: flex;
     flex-direction: column;
     align-items: center;
