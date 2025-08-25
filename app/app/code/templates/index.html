@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user_cuenta.titulo }}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="userInfo">
+            <H1>{{ user_cuenta.getNombre() }}</H1>
+            <h2>{{ user_cuenta.getDNI() }}</h2>
+            <h3>{{ user_cuenta.getEmail() }}</h3>
+        </div>
+        <div class="userMonto">
+            <h1>MONTO DISPONIBLE: ${{ user_cuenta.getMonto() }}</h1>
+        </div>
+
+        <div class="userAcciones">
+            <button class="btn-transferir" id="btn-transferir">TRANSFERIR</button>
+            <button class="btn-depositar" id="btn-depositar">DEPOSITAR</button>
+            <h1>BALANCE</h1>
+<<<<<<< HEAD
+            <button class="btn-registrarse" id="btn-registrarse">REGISTRARSE</button>
+            <button>LOGOUT</button>
+            <button class="btn-login" id="btn-login">LOGIN</button>
+=======
+            <button> LOGOUT </button>
+            <button class="btn-login" id="btn-login" >LOGIN</button>
+>>>>>>> 3a904b26f4a0b21507fab83171649360c5f25419
+        </div>
+
+        <div class="userHistorial">
+        </div>
+
+        <form action="/registrarse" method="POST" id="form-registrarse" class="invisible">
+            <H2>REGISTRARSE</H2>
+            <input type="text" name="userNombre" id="userNombre" placeholder="Inserte nombre" required>
+            <input type="number" name="userDNI" id="userDNI" placeholder="Inserte DNI" required>
+            <input type="email" name="userEmail" id="userEmail" placeholder="Inserte correo electronico" required>
+            <input type="password" name="userPassword" id="userPassword" placeholder="Ingrese contraseña" required>
+            <button type="submit">CONFIRMAR</button>
+        </form>
+
+        <form action="/login" method="POST" id="form-login" class="invisible">
+            <h2>LOGIN</h2>
+            <p>Asegurese de que el usuario exista.</p>
+            <input type="number" name="loginDNI" id="loginDNI" placeholder="Ingrese su DNI" required>
+            <input type="password" name="loginPassword" id="loginPassword" placeholder="Ingrese su contraseña" required>
+            <button type="submit">CONFIRMAR</button>
+        </form>
+
+<<<<<<< HEAD
+        <form action="/" method="post" id="form-ingresar" class="invisible">
+            <h2>INGRESAR</h2>
+            <input type="number" name="userIngresar" id="" placeholder="Ingresar monto">
+            <button type="submit" class="confirmar">CONFIRMAR</button>
+=======
+        <form action="/depositar" method="POST" id="form-depositar" class="invisible">
+            <h2>DEPOSITAR</h2>
+            <input type="search" name="userSearch" id="userID" placeholder="Buscar usuario">
+            <input type="number" name="userMonto" id="userMonto" placeholder="Depositar monto" requeried>
+            <button type="submit" class="confirmar" onclick="history.back()">CONFIRMAR</button>
+>>>>>>> 3a904b26f4a0b21507fab83171649360c5f25419
+        </form>
+    </main>
+</body>
+</html>
